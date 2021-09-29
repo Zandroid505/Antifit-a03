@@ -1,4 +1,4 @@
-package basline;
+package baseline;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +14,8 @@ class Solution24Test {
 
         boolean expected = true;
         boolean actual = solCheck.isAnagram(word1, word2);
+
+        assertEquals(expected, actual);
     }
 
 }

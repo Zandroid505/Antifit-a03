@@ -3,7 +3,7 @@
  *  Copyright 2021 Zakaria Antifit
  */
 
-package basline;
+package baseline;
 
 import java.util.Scanner;
 
@@ -12,15 +12,22 @@ public class UserInput {
     private String word1;
     private String word2;
 
-    public UserInput(String word1, String word2) {
-        this.word1 = word1;
-        this.word2 = word2;
+    public UserInput() {
+        word1 = "";
+        word2 = "";
     }
 
     public void askForInput() {
         // Prompt user for two strings
+        System.out.println("Enter two strings and I'll tell you if they are anagrams:");
+
         // Scan in first string
+        System.out.print("Enter the first string: ");
+        word1 = input.nextLine();
+
         // Scan in second string
+        System.out.print("Enter the second string: ");
+        word2 = input.nextLine();
     }
 
     public String getWord1() {
