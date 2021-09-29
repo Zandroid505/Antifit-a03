@@ -12,10 +12,9 @@ class Solution24Test {
         String word1 = "tar";
         String word2 = "rat";
 
-        boolean expected = true;
         boolean actual = solCheck.isAnagram(word1, word2);
 
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
 
 }
