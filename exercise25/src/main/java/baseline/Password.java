@@ -87,7 +87,6 @@ public class Password {
     }
 
 
-
     public String passwordEvaluator(int passwordStrength) {
         // If passwordStrength == 1
         if(passwordStrength == 1)
@@ -104,6 +103,9 @@ public class Password {
         // If passwordStrength == 4
         if(passwordStrength == 4)
             passwordStrengthDescription = "very strong password.";
+
+        if(passwordStrength == 0)
+            passwordStrengthDescription = "unknown strength.";
 
         // return PWStrengthDescription
         return passwordStrengthDescription;
