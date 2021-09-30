@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 3 Solutions
+ *  Copyright 2021 Zakaria Antifit
+ */
+
 package baseline;
 
 import org.junit.jupiter.api.Test;
@@ -12,7 +17,7 @@ class PasswordTest {
         Password user = new Password(PW);
 
         int expected = 1;
-        int actual = user.passwordStrength(PW);
+        int actual = user.passwordValidator(PW);
 
         assertEquals(expected, actual);
     }
@@ -23,7 +28,7 @@ class PasswordTest {
         Password user = new Password(PW);
 
         int expected = 2;
-        int actual = user.passwordStrength(PW);
+        int actual = user.passwordValidator(PW);
 
         assertEquals(expected, actual);
     }
@@ -34,7 +39,7 @@ class PasswordTest {
         Password user = new Password(PW);
 
         int expected = 3;
-        int actual = user.passwordStrength(PW);
+        int actual = user.passwordValidator(PW);
 
         assertEquals(expected, actual);
     }
@@ -45,7 +50,7 @@ class PasswordTest {
         Password user = new Password(PW);
 
         int expected = 4;
-        int actual = user.passwordStrength(PW);
+        int actual = user.passwordValidator(PW);
 
         assertEquals(expected, actual);
     }

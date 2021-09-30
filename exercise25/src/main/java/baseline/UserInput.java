@@ -17,7 +17,10 @@ public class UserInput {
 
     public void askForPassword() {
         // print "Type in your password to test its strength: "
+        System.out.println("Type in your password to test its strength: ");
+
         // Scan in input into userPW
+        userPW = input.nextLine();
     }
 
     public String getUserPW() {
