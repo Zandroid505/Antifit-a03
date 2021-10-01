@@ -10,13 +10,13 @@ class PaymentCalculatorTest {
     void calculateMonthsUntilPaidOffForBob() {
         PaymentCalculator brokeBob = new PaymentCalculator(100000, 10, 1000);
 
-        assertEquals(216, brokeBob.calculateMonthsUntilPaidOff());
+        assertEquals(213, brokeBob.calculateMonthsUntilPaidOff());
     }
 
     @Test
     void calculateMonthsUntilPaidOffForSteve() {
         PaymentCalculator smartSteve = new PaymentCalculator(10000, 7, 100);
 
-        assertEquals(151, smartSteve.calculateMonthsUntilPaidOff());
+        assertEquals(150, smartSteve.calculateMonthsUntilPaidOff());
     }
 }
