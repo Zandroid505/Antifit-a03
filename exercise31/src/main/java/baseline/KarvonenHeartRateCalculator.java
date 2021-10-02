@@ -9,24 +9,24 @@ public class KarvonenHeartRateCalculator {
     private int age;
     private int restingHR;
 
-    public KarvonenHeartRateCalculator() {
-        // Intialize fields to userInput
+    public KarvonenHeartRateCalculator(int age, int restingHR) {
+        this.age = age;
+        this.restingHR = restingHR;
     }
 
     public void outputTargetHR() {
-        // print "Resting Pulse: 'restingHR'"
-        // print "Age: 'age'"
+        System.out.println("Resting Pulse: " + this.restingHR);
+        System.out.println("Age: \n" + this.age);
 
-        // print "Intensity    | Rate"
-        // print "-------------|-----"
-        // print "55%
-        // for(i = 55% to 95%)
-            // print "'i'%----------| calculateTargetHR(i)"
+        System.out.println("Intensity    | Rate");
+        System.out.println("-------------|-----");
+        for(int i = 55; i <= 95; i += 5)
+            System.out.printf("%d%%          | %.0f bpm%n", i, calculateTargetHR(i));
 
     }
 
-    public int calculateTargetHR(int intensity) {
-        // return(((220 - age) - restingHR) * (intensity / 100)) + restingHR
+    public double calculateTargetHR(int intensity) {
+        return Math.round((((220.0 - this.age) - this.restingHR) * (intensity / 100.0)) + this.restingHR);
     }
 
 }

@@ -5,6 +5,7 @@
 
 package baseline;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInput {
@@ -13,24 +14,33 @@ public class UserInput {
     private int restingHR;
 
     public UserInput() {
-        // Intialize fields to 0
+        this.age = 0;
+        this.restingHR = 0;
     }
 
     public void askForUserInfo() {
-        //Try
-        // print "How old are you? "
-        // scan into age
+        boolean continueLoop = true;
+        do {
+            try {
+                System.out.print("How old are you? " );
+                this.age = input.nextInt();
 
-        // print "What is your resting heart rate? "
-        // scan into restingHR
-        // Catch(InvalidArgumentException)
+                System.out.print("What is your resting heart rate? " );
+                this.restingHR = input.nextInt();
+
+                continueLoop = false;
+            } catch (InputMismatchException inputMismatchException) {
+                input.nextLine(); // Discard input
+                System.out.println("You must enter only numbers. Try again." );
+            }
+        } while(continueLoop);
     }
 
     public int getAge() {
-        return age;
+        return this.age;
     }
 
     public int getRestingHR() {
-        return restingHR;
+        return this.restingHR;
     }
 }
