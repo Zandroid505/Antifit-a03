@@ -2,10 +2,9 @@ package baseline;
 
 public class Solution28 {
     public static void main(String[] args) {
-        // Create SumCalculator object
+        SumCalculator summySum = new SumCalculator();
 
-        // Call askForNumbers
-        // Call outputSum
-
+        summySum.askForNumbers();
+        summySum.outputSum();
     }
 }

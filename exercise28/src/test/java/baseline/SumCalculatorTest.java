@@ -10,25 +10,25 @@ class SumCalculatorTest {
     void askForNumbersMattyMath() {
         SumCalculator mattyMath = new SumCalculator();
 
-        mattyMath.addNumbersToSum(4);
-        mattyMath.addNumbersToSum(7);
-        mattyMath.addNumbersToSum(9);
-        mattyMath.addNumbersToSum(2);
-        mattyMath.addNumbersToSum(8);
+        mattyMath.addNumberToSum(4);
+        mattyMath.addNumberToSum(7);
+        mattyMath.addNumberToSum(9);
+        mattyMath.addNumberToSum(2);
+        mattyMath.addNumberToSum(8);
 
-        assertEquals(30, mattyMath.getSum());
+        assertEquals(30.0, mattyMath.getSum());
     }
 
     @Test
     void askForNumbersTraceyTrig() {
         SumCalculator traceyTrig = new SumCalculator();
 
-        traceyTrig.addNumbersToSum(4);
-        traceyTrig.addNumbersToSum(7);
-        traceyTrig.addNumbersToSum(9);
-        traceyTrig.addNumbersToSum(2);
-        traceyTrig.addNumbersToSum(8);
+        traceyTrig.addNumberToSum(1);
+        traceyTrig.addNumberToSum(1);
+        traceyTrig.addNumberToSum(9);
+        traceyTrig.addNumberToSum(6);
+        traceyTrig.addNumberToSum(5);
 
-        assertEquals(30, traceyTrig.getSum());
+        assertEquals(22.0, traceyTrig.getSum());
     }
 }

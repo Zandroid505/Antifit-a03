@@ -1,40 +1,49 @@
 package baseline;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SumCalculator {
     private static final Scanner input = new Scanner(System.in);
-    private int sum;
+    private double sum;
 
     public SumCalculator() {
         // Intialize sum to 0
     }
 
     public void askForNumbers() {
-        boolean continueLoop;
-        int numberTemp;
+        boolean continueLoop = true;
+        double numberTemp;
         int counter = 0;
 
-        // do
-            //continueLoop = true
-            // print "Enter a number"
-            // scan into numberTemp (throw inputMismatchException if not a number)
-            // addNumberToSum(numberTemp)
+        do {
+            try {
+                continueLoop = true;
+                System.out.print("Enter a number: ");
+                numberTemp = input.nextDouble();
+                addNumberToSum(numberTemp);
 
-            // counter++
-            // continueLoop = false
-        // while(counter < 5 && continueLoop)
+                counter++;
+                continueLoop = false;
+            }
+            catch (InputMismatchException inputMismatchException) {
+                System.err.printf("%nException: %s%n", inputMismatchException);
+                input.nextLine(); // Discard input
+                System.out.println("You must enter only numbers. Try again.");
+            }
+        } while(counter < 5 || continueLoop);
     }
 
-    public void addNumbersToSum(int number) {
-        // sum += number
+    public void addNumberToSum(double number) {
+        this.sum += number;
     }
 
-    public int getSum() {
-        return sum;
+    public double getSum() {
+        return this.sum;
     }
 
     public void outputSum() {
         // print "The total is 'sum'."
+        System.out.println("The total is " + this.sum + ".");
     }
 }
