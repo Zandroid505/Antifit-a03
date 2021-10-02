@@ -55,7 +55,7 @@ public class GuessNumberGame {
         this.currentRandomNumber = currentRandomNumber;
     }
 
-    public void runGameSelection() {
+    private void runGameSelection() {
         // int numTemp
         // boolean guessIsWrong;
 
