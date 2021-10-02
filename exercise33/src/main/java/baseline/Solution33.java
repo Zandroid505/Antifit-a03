@@ -6,7 +6,10 @@
 package baseline;
 
 public class Solution33 {
-    // Create MagicEightBall object
-    // Prompt for question
-    //print "generateResponse(generateNumber())"
+    public static void main(String[] args) {
+        MagicEightBall mikey = new MagicEightBall();
+
+        mikey.promptForQuestion();
+        System.out.println(mikey.generateResponse(mikey.generateNumber()));
+    }
 }

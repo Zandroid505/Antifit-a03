@@ -11,26 +11,30 @@ import java.util.Scanner;
 
 public class MagicEightBall {
     private static final Scanner input = new Scanner(System.in);
-    Random rand = new Random();
+    private Random rand = new Random();
     private final ArrayList<String> eightBall = new ArrayList<>();
     private String userQuestion;
 
     public MagicEightBall() {
       // Initialize eightBall to four possible responses
-        // Initialize userQuestion to ""
+        this.eightBall.add("Yes.");
+        this.eightBall.add("No.");
+        this.eightBall.add("Maybe.");
+        this.eightBall.add("Ask again later.");
+
+        this.userQuestion = "";
     }
 
     public void promptForQuestion() {
-        // print "What's your question?"
-        // scan into userQuestion
+        System.out.println("What's your question?");
+        this.userQuestion = input.nextLine();
     }
 
-    public void generateNumber() {
-        // randNum = random number 0 - 3
-        // generateResponse(randNum)
+    public int generateNumber() {
+        return rand.nextInt(3);
     }
 
     public String generateResponse(int number) {
-        // return eightBall(number)
+        return this.eightBall.get(number);
     }
 }
