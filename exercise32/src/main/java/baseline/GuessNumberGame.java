@@ -5,6 +5,7 @@
 
 package baseline;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -15,40 +16,55 @@ public class GuessNumberGame {
     private int numGuesses;
 
     public void gameManager() {
-        // boolean continueGame = true
-        // int currentDifficulty = 0
-        // char playGameAgain
+        boolean continueGame = true;
+        int currentDifficulty = 0;
+        String playGameAgain = "";
 
-        // print "Let's play Guess the Number!"
+        System.out.println("Let's play Guess the Number!\n");
 
-        // do
-            // numGuesses = 0
+        do {
+            this.numGuesses = 0;
 
-            // try
-                // print "Enter the difficulty level (1, 2, or 3): "
-                // scan input into currentDifficulty
-            // catch(inputMismatchException)
-                // print "Only type integers. Try again."
+            try {
+                System.out.print("Enter the difficulty level (1, 2, or 3): " );
+                currentDifficulty = input.nextInt();
+
+                switch (currentDifficulty) {
+                    case 1:
+                        setCurrentRandomNumber(rand.nextInt(10) + 1);
+                        runGameSelection();
+                        break;
+                    case 2:
+                        setCurrentRandomNumber(rand.nextInt(100) + 1);
+                        runGameSelection();
+                        break;
+                    case 3:
+                        setCurrentRandomNumber(rand.nextInt(1000) + 1);
+                        runGameSelection();
+                        break;
+                    default:
+                        break;
+                }
+                System.out.printf("You got it in %d guess(es)%n", getNumGuesses());
+
+                System.out.print("Do you wish to play again (Y/N)? " );
+
                 // clear input
+                input.nextLine();
+                playGameAgain = input.nextLine();
 
-            // Switch(currentDifficulty)
-                // 1
-                    // setCurrentRandomNumber(randomNumber 1-10)
-                    // numGuesses = runGameSelection()
-                // 2
-                    // setCurrentRandomNumber(randomNumber 1-100)
-                    // numGuesses = runGameSelection()
-                // 3
-                    // setCurrentRandomNumber(randomNumber 1-1000)
-                    // numGuesses = runGameSelection()
-            // print "You got it in 'numGuesses' guesses!"
+                if (playGameAgain.equals("N" ) || playGameAgain.equals("n" ))
+                    continueGame = false;
+            }
+            catch (InputMismatchException inputMismatchException) {
+                    System.out.println("Only type integers. Try again." );
 
-            // print "Do you wish to play again (Y/N)? "
-            // scan into playGameAgain
-            // if(playGameAgain == 'N' or playGameAgain == 'n')
-                // continueGame = false
+                    // clear input
+                    input.nextLine();
+                }
 
-        // while(continueGame)
+        } while(continueGame);
+
     }
 
     public void setCurrentRandomNumber(int currentRandomNumber) {
@@ -56,31 +72,37 @@ public class GuessNumberGame {
     }
 
     private void runGameSelection() {
-        // int numTemp
-        // boolean guessIsWrong;
+        int numTemp;
+        boolean guessIsWrong = true;
 
-        // do
-            // try
-                // print "I have my number. What's your guess? "
-                // scan into numTemp
-                // guessIsWrong = checkGuess(numTemp)
-            // catch(inputMismatchException)
-                // print "Only type integers. Try again."
+        System.out.println("I have my number. What's your guess? " );
+        do {
+            try {
+                numTemp = input.nextInt();
+                guessIsWrong = checkGuess(numTemp);
+            }
+            catch (InputMismatchException inputMismatchException) {
+                System.out.println("Only type integers. Try again.");
+
                 // clear input
-                // numGuessesTemp++
-        // while(guessIsWrong)
+                input.nextLine();
+                this.numGuesses++;
+            }
+        } while(guessIsWrong);
     }
 
     public boolean checkGuess(int userGuess) {
-        // numGuessesTemp++
-        // if(userGuess == currentRandomNumber)
-            // return false
-        // else if (userGuess > currentRandomNumber)
-            // print "Too high. Guess again: "
-            // return true
-        // else
-            // print "Too low. Guess again: "
-            // return true
+        this.numGuesses++;
+        if(userGuess == this.currentRandomNumber)
+            return false;
+        else if (userGuess > currentRandomNumber) {
+            System.out.println("Too high. Guess again: ");
+           return true;
+        }
+        else {
+            System.out.println("Too low. Guess again: " );
+            return true;
+        }
     }
 
     public int getNumGuesses() {

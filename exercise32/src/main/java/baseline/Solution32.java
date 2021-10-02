@@ -7,8 +7,8 @@ package baseline;
 
 public class Solution32 {
     public static void main(String[] args) {
-        // Create GuessNumberGame object
+        GuessNumberGame guessyGuess = new GuessNumberGame();
 
-        // Call gameManager
+        guessyGuess.gameManager();
     }
 }
