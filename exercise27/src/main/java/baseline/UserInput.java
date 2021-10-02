@@ -6,25 +6,38 @@ public class UserInput {
     private static final Scanner input = new Scanner(System.in);
     private String firstName;
     private String lastName;
-    private int zipCode;
+    private String zipCode;
     private String employeeID;
 
     public UserInput() {
-        // Intialize all variable to "" or 0
+        // Initialize all variable to ""
+        this.firstName = "";
+        this.lastName = "";
+        this.zipCode = "";
+        this.employeeID = "";
+
     }
 
     public void promptForEmployeeInfo() {
         // print "Enter the first name: "
+        System.out.print("Enter the first name: ");
         // scan in firstName
+        this.firstName = input.nextLine();
 
         // print "Enter the last name: "
+        System.out.print("Enter the last name: ");
         // scan in lastName
+        this.lastName = input.nextLine();
 
         // print "Enter the ZIP code: "
+        System.out.print("Enter the ZIP code: ");
         // scan in zipCode
+        this.zipCode = input.nextLine();
 
         // print "Enter the employee ID: "
+        System.out.print("Enter the employee ID: ");
         // scan in employeeID
+        this.employeeID = input.nextLine();
     }
 
     public String getFirstName() {
@@ -35,7 +48,7 @@ public class UserInput {
         return lastName;
     }
 
-    public int getZipCode() {
+    public String getZipCode() {
         return zipCode;
     }
 

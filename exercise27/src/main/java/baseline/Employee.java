@@ -8,87 +8,107 @@ public class Employee {
 
     public Employee(String firstName, String lastName, String zipCode, String employeeID) {
         // Intialize fields to userInput
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.zipCode = zipCode;
+        this.employeeID = employeeID;
     }
 
     public String validateInput() {
-        // firstNameNotFilledIn = ""
-        // lastNameNotFilledIn = ""
-        // firstNameLessThanTwoChar = ""
-        // lastNameLessThanTwoChar = ""
-        // employeeIDFormatWrong = ""
-        // zipCodeNotNum = ""
-        // int numErrors = 0
+        String firstNameNotFilledIn = "";
+        String lastNameNotFilledIn = "";
+        String firstNameLessThanTwoChar = "";
+        String lastNameLessThanTwoChar = "";
+        String employeeIDFormatWrong = "";
+        String zipCodeFormatWrong = "";
+        String outputMessage;
+        int numErrors = 0;
 
-        //if(Call checkIfNameIsFilledIn(firstName) for firstName isn't correct)
-            // firstNameNotFilledIn = "The first name must be filled in."
-            // numErrors++
+        if(checkIfNameIsEmpty(this.firstName)) {
+            firstNameNotFilledIn = "The first name must be filled in.\n";
+            numErrors++;
+        }
 
-        //if(Call checkIfNameIsFilledIn(lastName) for lastName isn't correct)
-            // lastNameNotFilledIn = "The last name must be filled in."
-            // numErrors++
+        if(checkIfNameIsEmpty(this.lastName)) {
+            lastNameNotFilledIn = "The last name must be filled in.\n";
+            numErrors++;
+        }
 
-        //if(Call checkIfNameIsMoreThanTwoCharactersLong(firstName) for firstName isn't correct)
-            // firstNameLessThanTwoChar = "The first name must be at least 2 characters long."
-            // numErrors++
+        if(checkIfNameIsLessThanTwoChars(this.firstName)) {
+            firstNameLessThanTwoChar = "The first name must be at least 2 characters long.\n";
+            numErrors++;
+        }
 
-        //if(Call checkIfNameIsMoreThanTwoCharactersLong(firstName) for lastName isn't correct)
-            // lastNameLessThanTwoChar = "The last name must be at least 2 characters long."
-            // numErrors++
+        if(checkIfNameIsLessThanTwoChars(this.lastName)) {
+            lastNameLessThanTwoChar = "The last name must be at least 2 characters long.\n";
+            numErrors++;
+        }
 
-        // if(Call checkIfEmployeeIDIsCorrectFormat() for employeeID isn't correct)
-            // employeeIDFormatWrong = "The employee ID must be in the format of AA-1234."
-            // numErrors++
+        if(checkIfEmployeeIDFormatIsIncorrect()) {
+            employeeIDFormatWrong = "The employee ID must be in the format of AA-1234.\n";
+            numErrors++;
+        }
 
-        // if(Call checkIfZipCodeFormatIsCorrect() for zipCode isn't correct)
-            // zipCodeNotFormatWrong = "The zipcode must be a 5 digit number."
-            // numErrors++
+        if(checkIfZipCodeFormatIsIncorrect()) {
+            zipCodeFormatWrong = "The zipcode must be a 5 digit number.\n";
+            numErrors++;
+        }
 
-        // if(numErrors > 0)
-            // outputMessage = "'firstNameNotFilledIn' + 'lastNameNotFilledIn' + 'firstNameLessThanTwoChar' + 'lastNameLessThanTwoChar'
-                                                                    // + 'employeeIDFormatWrong' + 'zipCodeNotNum'
-        // else
-            // outputMessage = "There were no errors found"
+        if(numErrors > 0) {
+            outputMessage = firstNameLessThanTwoChar + lastNameLessThanTwoChar + firstNameNotFilledIn
+                            + lastNameNotFilledIn + employeeIDFormatWrong + zipCodeFormatWrong;
+        } else {
+            outputMessage = "There were no errors found.\n";
+        }
 
-        // return outputMessage
+        return outputMessage;
     }
 
-    private boolean checkIfNameIsFilledIn(String name) {
-        // if(string is empty)
-            // return false
-        // else
-            // return true
+    private boolean checkIfNameIsEmpty(String name) {
+        if(name.isEmpty())
+            return true;
+        else
+            return false;
     }
 
-    private boolean checkIfNameIsMoreThanTwoCharactersLong() {
-        // if(string is less than two characters)
-            // return false
-        // else
-            // return true
+    private boolean checkIfNameIsLessThanTwoChars(String name) {
+        if(name.length() < 2)
+            return true;
+        else
+            return false;
     }
 
-    private boolean checkIfEmployeeIDIsCorrectFormat() {
-        // arrTemp = employeeID
-        // for(iterate through first two characters to confirm they are letters)
-            // if(not letter)
-                // return false
+    private boolean checkIfEmployeeIDFormatIsIncorrect() {
+        for(int i = 0; i < 2; i++) {
+            if (!((this.employeeID.charAt(i) >= 'a' && this.employeeID.charAt(i) <= 'z')
+                    || (this.employeeID.charAt(i) >= 'A' && this.employeeID.charAt(i) <= 'Z'))) {
+                return true;
+            }
+        }
 
-        // if(third character is != '-')
-            //return false
+        if(this.employeeID.charAt(2) != '-')
+            return true;
 
-        // for(iterate through last four characters to confirm they are numbers)
-            // if(not number)
-            // return false
+        for(int i = 3; i < 7; i++) {
+            if (!(this.employeeID.charAt(i) >= '0' && this.employeeID.charAt(i) <= '9')) {
+                return true;
+            }
+        }
 
-        // return true
+        return false;
     }
 
-    private boolean checkIfZipCodeFormatIsCorrect() {
-        // if(zipCode length != 5)
-            // return false
-        // if(zipCode is not a number)
-            // return false
+    private boolean checkIfZipCodeFormatIsIncorrect() {
+        if(this.zipCode.length() != 5)
+            return true;
 
-        // return true
+        for(int i = 0; i < 5; i++) {
+            if(!(this.zipCode.charAt(i) >= '0' && this.zipCode.charAt(i) <= '9')) {
+                return true;
+            }
+        }
+
+        return false;
 
     }
 }

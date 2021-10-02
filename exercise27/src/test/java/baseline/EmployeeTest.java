@@ -10,49 +10,49 @@ class EmployeeTest {
     void validateInputForLessThanTwoCharacterFirstName() {
         Employee b = new Employee("b", "Jeffrey", "35678", "JB-5674");
 
-        assertEquals(b.validateInput(), "The first name must be at least 2 characters long.");
+        assertEquals("The first name must be at least 2 characters long.\n", b.validateInput());
     }
 
     @Test
     void validateInputForLessThanTwoCharacterLastName() {
         Employee b = new Employee("Bobby", "J", "35678", "JB-5674");
 
-        assertEquals(b.validateInput(), "The last name must be at least 2 characters long.");
+        assertEquals("The last name must be at least 2 characters long.\n", b.validateInput());
     }
 
     @Test
     void validateInputForBlankFirstName() {
         Employee b = new Employee("", "Jeffrey", "35678", "JB-5674");
 
-        assertEquals(b.validateInput(), "The first name must be filled in.");
+        assertEquals("The first name must be at least 2 characters long.\nThe first name must be filled in.\n", b.validateInput());
     }
 
     @Test
     void validateInputForBlankLastName() {
         Employee b = new Employee("Bobby", "", "35678", "JB-5674");
 
-        assertEquals(b.validateInput(), "The last name must be filled in.");
+        assertEquals("The last name must be at least 2 characters long.\nThe last name must be filled in.\n", b.validateInput());
     }
 
     @Test
     void validateInputForIncorrectZipCodeWithLetter() {
         Employee b = new Employee("Bobby", "Jeffrey", "35A34", "JB-5674");
 
-        assertEquals(b.validateInput(), "The zipcode must be a 5 digit number.");
+        assertEquals("The zipcode must be a 5 digit number.\n", b.validateInput());
     }
 
     @Test
     void validateInputForIncorrectZipCodeWithMoreThanFiveDigits() {
         Employee b = new Employee("Bobby", "Jeffrey", "352634", "JB-5674");
 
-        assertEquals(b.validateInput(), "The zipcode must be a 5 digit number.");
+        assertEquals("The zipcode must be a 5 digit number.\n", b.validateInput());
     }
 
     @Test
     void validateInputForIncorrectEmployeeIDFormat() {
-        Employee b = new Employee("Bobby", "Jeffrey", "352634", "BJE-5674");
+        Employee b = new Employee("Bobby", "Jeffrey", "35678", "BJE-5674");
 
-        assertEquals(b.validateInput(), "The employee ID must be in the format of AA-1234.");
+        assertEquals("The employee ID must be in the format of AA-1234.\n", b.validateInput());
     }
 
 
