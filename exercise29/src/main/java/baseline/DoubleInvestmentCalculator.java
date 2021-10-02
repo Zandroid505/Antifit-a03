@@ -41,7 +41,7 @@ public class DoubleInvestmentCalculator {
 
     public void calculateRateOfReturn(int rateOfReturn) {
         double yearsTemp = 72.0 / rateOfReturn;
-        
+
         if(yearsTemp % 1 != 0)
             yearsTemp += 1.0;
 
