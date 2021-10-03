@@ -15,6 +15,10 @@ public class RandomWinnerGame {
     private ArrayList<String> contestants = new ArrayList<>();
     private int numberOfContestants;
 
+    public RandomWinnerGame() {
+        this.numberOfContestants = 0;
+    }
+
     public void gameManager() {
         String tempString;
         boolean continueLoop = true;
