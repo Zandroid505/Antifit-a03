@@ -7,11 +7,10 @@ package baseline;
 
 public class Solution38 {
     public static void main(String[] args) {
-        // Create ValueFilter object
+        ValueFilter evenNumberLover = new ValueFilter();
 
-        // Call askForNumbers
-        // Call divideString(getUserNumbers())
-        // Call filterEvenNumbers(getOriginalNumbers())
-        // Call outputEvenNumbers(getEvenNumbers())
+        evenNumberLover.askForNumbers();
+
+        evenNumberLover.outputEvenNumbers(evenNumberLover.filterEvenNumbers(evenNumberLover.divideString(evenNumberLover.getUserNumberString())));
     }
 }

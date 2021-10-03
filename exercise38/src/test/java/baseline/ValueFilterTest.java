@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 3 Solutions
+ *  Copyright 2021 Zakaria Antifit
+ */
+
 package baseline;
 
 import org.junit.jupiter.api.Test;
@@ -40,6 +45,8 @@ class ValueFilterTest {
         actual.add(5);
         actual.add(6);
         actual.add(2);
+
+        user.setAmntOfNumbers(6);
 
         actual = user.filterEvenNumbers(actual);
 

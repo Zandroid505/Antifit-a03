@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 3 Solutions
+ *  Copyright 2021 Zakaria Antifit
+ */
+
 package baseline;
 
 import java.util.ArrayList;
@@ -5,71 +10,76 @@ import java.util.Scanner;
 
 public class ValueFilter {
     private static final Scanner input = new Scanner(System.in);
-    private String userNumbers;
+    private String userNumberString;
     private int amntOfNumbers;
-    private ArrayList<Integer> originalNumbers = new ArrayList<>();
+    private int amntOfEvenNumbers;
+    private ArrayList<Integer> originalNumberArray = new ArrayList<>();
     private ArrayList<Integer> evenNumbers = new ArrayList<>();
 
     public ValueFilter() {
-        this.userNumbers = "";
+        this.userNumberString = "";
         this.amntOfNumbers = 0;
+        this.amntOfEvenNumbers = 0;
     }
 
     public void askForNumbers() {
-        // print "Enter a list of numbers, separate by spaces: "
-        // scan input into userNumbers
+        System.out.print("Enter a list of numbers, separate by spaces: ");
+        this.userNumberString = input.nextLine();
     }
 
-    public String getUserNumbers() {
-        return userNumbers;
+    public String getUserNumberString() {
+        return userNumberString;
     }
 
     public ArrayList<Integer> divideString(String userNumbers) {
-        // tempStringArr = userNumbers.split(" ")
-        // amntOfNumbers = length of tempStringArr
+        String[] tempStringArr = userNumbers.split(" ");
+        this.amntOfNumbers = tempStringArr.length;
 
-        // for(amntOfNumbers)
-            // numberTemp = convertStringToNumber(part of userNumbers)
-            // add numberTemp to originalNumbers
+        for(int i = 0; i < this.amntOfNumbers; i++)
+            this.originalNumberArray.add(convertStringToNumber(tempStringArr[i]));
 
-        // return originalNumbers
+        return this.originalNumberArray;
     }
 
     private int convertStringToNumber(String number) {
-        // tempInt
-        // continueLoop = false
+        int tempInt = 0;
+        boolean continueLoop = false;
 
-        // do
-            // try
-                // tempInt = parse String to int
-                // return tempInt
-            // Catch(NumberFormatException)
-                // print "One of your inputs was not a number. Type in a number to replace it"
-                // number = userInput
-                // continueLoop = true
-        // while(continueLoop)
+        do {
+            try {
+                tempInt = Integer.parseInt(number);
+            }
+            catch (NumberFormatException numberFormatException) {
+                System.out.print("One of your inputs was not a number. Type in a number to replace it: ");
+                number = input.nextLine();
+                continueLoop = true;
+            }
+        } while(continueLoop);
+
+        return tempInt;
     }
 
-    public ArrayList<Integer> getOriginalNumbers() {
-        return originalNumbers;
+    public void setAmntOfNumbers(int amntOfNumbers) {
+        this.amntOfNumbers = amntOfNumbers;
     }
 
     public ArrayList<Integer> filterEvenNumbers(ArrayList<Integer> originalNumberArray) {
-        // for(amntOfNumbers)
-            // if(originalNumberArray[i] % 2 == 0)
-                // add originalNumberArray[i] to evenNumbers
+        for(int i = 0; i < this.amntOfNumbers; i++) {
+            if(originalNumberArray.get(i) % 2 == 0) {
+                this.evenNumbers.add(originalNumberArray.get(i));
+                this.amntOfEvenNumbers++;
+            }
+        }
 
-        // return evenNumbers
+        return this.evenNumbers;
     }
 
-    public ArrayList<Integer> getEvenNumbers() {
-        return evenNumbers;
-    }
+    public void outputEvenNumbers(ArrayList<Integer> evenNumberArray) {
+        System.out.print("The even numbers are");
+        for(int i = 0; i < this.amntOfEvenNumbers; i++)
+            System.out.printf("%2d", evenNumberArray.get(i));
 
-    public void outputEvenNumbers() {
-        // print "The even numbers are "
-        // for(amntOfNumbers)
-            // print "evenNumbers[i] "
+        System.out.println(".");
     }
 
 }
