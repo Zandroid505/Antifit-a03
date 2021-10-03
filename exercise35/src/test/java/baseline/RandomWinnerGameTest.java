@@ -17,7 +17,6 @@ class RandomWinnerGameTest {
     void checkIfNamesAreAddedToArrayListCorrectly() {
         RandomWinnerGame tester1 = new RandomWinnerGame();
         ArrayList<String> expected = new ArrayList<>();
-        ArrayList<String> actual = new ArrayList<>();
 
         expected.add("Tommy");
         expected.add("Samy");
@@ -27,7 +26,7 @@ class RandomWinnerGameTest {
         tester1.addNameToList("Samy");
         tester1.addNameToList("Sally");
 
-        assertEquals(expected, actual);
+        assertEquals(expected, tester1.getContestants());
     }
 
     @Test
@@ -43,11 +42,10 @@ class RandomWinnerGameTest {
     @Test
     void selectWinner() {
         RandomWinnerGame tester3 = new RandomWinnerGame();
-        ArrayList<String> testArr = new ArrayList<>();
 
-        testArr.add("Tommy");
-        testArr.add("Samy");
-        testArr.add("Sally");
+        tester3.addNameToList("Tommy");
+        tester3.addNameToList("Samy");
+        tester3.addNameToList("Sally");
 
         assertEquals("Samy", tester3.selectWinner(1));
     }

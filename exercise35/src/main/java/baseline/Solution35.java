@@ -7,9 +7,9 @@ package baseline;
 
 public class Solution35 {
     public static void main(String[] args) {
-        // Create RandomWinnerGame object
+        RandomWinnerGame player = new RandomWinnerGame();
 
-        // Call gameManager
-        // Call displayWinner(selectWinner(generateRandomNumber)))
+        player.gameManager();
+        player.displayWinner(player.selectWinner(player.generateRandomNumber()));
     }
 }

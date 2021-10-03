@@ -16,37 +16,42 @@ public class RandomWinnerGame {
     private int numberOfContestants;
 
     public void gameManager() {
-        // tempString
-        // continueLoop = true
+        String tempString;
+        boolean continueLoop = true;
 
-        // do
-            //print "Enter a name: "
-            // scan into tempString
-            //if(string is empty)
-                // continueLoop = false
-            //else
-                // addNameToList(tempString)
-        // while(continueLoop)
+        do {
+            System.out.print("Enter a name: ");
+            tempString = input.nextLine();
+            if(tempString.isEmpty())
+                continueLoop = false;
+            else
+                addNameToList(tempString);
+        } while(continueLoop);
     }
 
     public void addNameToList(String name) {
         // Add name to contestants
-        // numberOfContestants++
+        this.contestants.add(name);
+        this.numberOfContestants++;
     }
 
     public int generateRandomNumber() {
-        //return randomNumber: 0 - (numberOfContestants - 1)
+        return rand.nextInt(numberOfContestants);
     }
 
     public String selectWinner(int winnerIndex) {
-        // return contestants(winnerIndex)
+        return this.contestants.get(winnerIndex);
     }
 
     public void displayWinner(String winner) {
-        // print "The winner is...'winner'"
+        System.out.println("The winner is... " + winner);
     }
 
     public void setNumberOfContestants(int numberOfContestants) {
         this.numberOfContestants = numberOfContestants;
+    }
+
+    public ArrayList<String> getContestants() {
+        return contestants;
     }
 }
