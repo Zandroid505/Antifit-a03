@@ -7,9 +7,12 @@ package baseline;
 
 public class Solution36 {
     public static void main(String[] args) {
-        // Create StatisticsCalculator object
-        // Call askForNumbers
+        StatisticsCalculator scientist = new StatisticsCalculator();
 
-        // Call outputStatistics(average, min, max, std)
+        scientist.askForNumbers();
+
+        scientist.outputStatistics(scientist.average(scientist.getUserNumbers()), scientist.min(scientist.getUserNumbers()),
+                                    scientist.max(scientist.getUserNumbers()), scientist.std(scientist.getUserNumbers()),
+                                                    scientist.getUserNumbers());
     }
 }

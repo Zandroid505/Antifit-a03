@@ -23,7 +23,7 @@ class StatisticsCalculatorTest {
 
          survey.setAmntOfNumbers(7);
 
-         assertEquals(509.57, survey.average(surveyResults));                                                                                                                                                                                                                survey.average(surveyResults));
+         assertEquals(509.57, survey.average(surveyResults));
 
     }
 
@@ -78,6 +78,6 @@ class StatisticsCalculatorTest {
 
         survey.setAmntOfNumbers(7);
 
-        assertEquals(103.39, survey.std(surveyResults));
+        assertEquals(95.70, survey.std(surveyResults));
     }
 }
