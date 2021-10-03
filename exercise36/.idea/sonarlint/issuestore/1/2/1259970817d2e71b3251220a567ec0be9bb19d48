@@ -1,0 +1,21 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ÖáõÓ
+S	java:S106$"9Replace this use of System.out or System.err by a logger.(”ÁÈ–ùÿÿÿÿ
+S	java:S106^"9Replace this use of System.out or System.err by a logger.(åœ±íùÿÿÿÿ
+S	java:S106`"9Replace this use of System.out or System.err by a logger.(ø¿©¼øÿÿÿÿ
+S	java:S106b"9Replace this use of System.out or System.err by a logger.(åë±èıÿÿÿÿ
+N	java:S106c"9Replace this use of System.out or System.err by a logger.(éÔµì
+S	java:S106e"9Replace this use of System.out or System.err by a logger.(›ıóıùÿÿÿÿ
+N	java:S106f"9Replace this use of System.out or System.err by a logger.(¼ñØ“
+‹
+java:S13196"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ü ‡àşÿÿÿÿ
+‹
+java:S1319:"uThe type of the "numberList" object should be an interface such as "List" rather than the implementation "ArrayList".(Ñäå
+
+java:S1319D"uThe type of the "numberList" object should be an interface such as "List" rather than the implementation "ArrayList".(—ş¨›øÿÿÿÿ
+
+java:S1319H"uThe type of the "numberList" object should be an interface such as "List" rather than the implementation "ArrayList".(¯Õäıÿÿÿÿ
+
+java:S1319L"uThe type of the "numberList" object should be an interface such as "List" rather than the implementation "ArrayList".(Ì¸—Æùÿÿÿÿ
+
+java:S1319]"uThe type of the "allNumbers" object should be an interface such as "List" rather than the implementation "ArrayList".(Ê•¢Êÿÿÿÿÿ
