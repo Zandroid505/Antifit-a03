@@ -14,25 +14,41 @@ public class Employee {
     private int numberOfEmployees;
 
     public Employee() {
-        //Intialize personnel
-        //Intialize numberOfEmployees
+        this.employeeList.add("John Smith");
+        this.employeeList.add("Jackie Jackson");
+        this.employeeList.add("Chris Jones");
+        this.employeeList.add("Amanda Cullen");
+        this.employeeList.add("Jeremy Goodwin");
+
+        this.numberOfEmployees = 5;
     }
 
     public void outputEmployeeList() {
-        // print "There are 'numberOfEmployees':"
-        // print "'employeeList'"
+        System.out.printf("There are %d employees:%n", this.numberOfEmployees);
+
+        for(int i = 0; i < this.numberOfEmployees; i++)
+            System.out.println(this.employeeList.get(i));
+
+        System.out.println();
     }
 
     public void removeEmployee() {
-        // print "Enter an employee name to remove: "
-        // tempString = userInput
-        // removeEmployee(tempString)
-        // numberOfEmployees--
-        // return employeeList
+        System.out.print("Enter an employee name to remove: ");
+        removeEmployeeFromList(input.nextLine());
     }
 
     public void removeEmployeeFromList(String employeeToTerminate) {
         // remove employeeToTerminate from employeeList
+        if(this.employeeList.contains(employeeToTerminate)) {
+            for(int i = 0; i < this.numberOfEmployees; i ++) {
+                if(this.employeeList.get(i).equals(employeeToTerminate)) {
+                    this.employeeList.remove(i);
+                    this.numberOfEmployees--;
+                }
+            }
+        } else {
+            System.out.println("\nEmployee not found.\n");
+        }
     }
 
     public void setEmployeeList(ArrayList<String> employeeList) {

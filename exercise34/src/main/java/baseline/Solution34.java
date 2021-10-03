@@ -6,8 +6,12 @@
 package baseline;
 
 public class Solution34 {
-    // Create Employee object
-    // Call outputEmployeeList()
-    // Call removeEmployee()
-    // Call outputEmployeeList()
+    public static void main(String[] args) {
+        Employee manInCharge = new Employee();
+
+        manInCharge.outputEmployeeList();
+        manInCharge.removeEmployee();
+
+        manInCharge.outputEmployeeList();
+    }
 }

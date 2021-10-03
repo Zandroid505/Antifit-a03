@@ -46,7 +46,7 @@ class EmployeeTest {
         expected.add("Gerald Clayton");
         expected.add("Wes Montgomery");
         expected.add("Gon Freecss");
-        actual.add("Kobe Thompson");
+        expected.add("Kobe Thompson");
 
         manager.setEmployeeList(actual);
         manager.removeEmployeeFromList("Bugs Bunny");
