@@ -5,10 +5,12 @@
 
 package baseline;
 
+import java.util.ArrayList;
+
 public class MultiplicationTableGenerator {
     private int number1;
     private int number2;
-    private StringBuilder multiplicationTable = new StringBuilder();
+    private ArrayList<Integer> multiplicationTable = new ArrayList<>();
 
     public MultiplicationTableGenerator() {
         this.number1 = 1;
@@ -17,23 +19,19 @@ public class MultiplicationTableGenerator {
 
     public void outputMultiplicationTable() {
         int tempInt;
-        String tempString;
 
-        this.multiplicationTable.append("\n");
         for(int i = number1; i <= number2; i++) {
             for (int j = number1; j <= number2; j++) {
                 tempInt = i * j;
 
-                tempString = String.format("%4d", tempInt);
-                this.multiplicationTable.append(tempString);
+                this.multiplicationTable.add(tempInt);
                 System.out.printf("%4d", tempInt);
             }
             System.out.println();
-            this.multiplicationTable.append("\n");
         }
     }
 
-    public StringBuilder getMultiplicationTable() {
+    public ArrayList<Integer> getMultiplicationTable() {
         return this.multiplicationTable;
     }
 }

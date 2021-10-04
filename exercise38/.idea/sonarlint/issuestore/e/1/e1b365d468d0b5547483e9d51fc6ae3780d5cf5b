@@ -1,0 +1,14 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ª¡´ı
+S	java:S1065"9Replace this use of System.out or System.err by a logger.(æÜ×Äûÿÿÿÿ
+U	java:S106N"9Replace this use of System.out or System.err by a logger.(µÛû¾8†Ö§»Ä/
+U	java:S106P"9Replace this use of System.out or System.err by a logger.(—Ç­8¼œÉ»Ä/
+U	java:S106R"9Replace this use of System.out or System.err by a logger.(µ‰ü¿8èåÌ»Ä/
+†
+java:S1319""pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Â¢Ã˜
+‹
+java:S1319B"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(˜‰øôıÿÿÿÿ
+™
+java:S1319B"~The type of the "originalNumberArray" object should be an interface such as "List" rather than the implementation "ArrayList".(˜‰øôıÿÿÿÿ
+–
+java:S1319M"zThe type of the "evenNumberArray" object should be an interface such as "List" rather than the implementation "ArrayList".(Š›®V8®É¼»Ä/
